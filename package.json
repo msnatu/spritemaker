@@ -1,0 +1,19 @@
+{
+  "name": "spritemaker",
+  "version": "1.0.0",
+  "description": "Create svg sprite images",
+  "main": "spritemaker.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "svg",
+    "sprite",
+    "maker"
+  ],
+  "author": "natu",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.12.4"
+  }
+}
