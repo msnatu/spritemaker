@@ -1,15 +1,49 @@
 var express = require('express');
+var path = require('path');
+var bodyParser = require('body-parser');
+var cookieParser = require('cookie-parser');
+var uploads = require('./uploads');
+
 var app = express();
 
-app.get('/', function (req, res) {
-  res.send('Hello World!');
-});
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
+
+var routes = require('./routes/index');
+app.use('/', routes);
+//app.use('/uploads', routes, handleFileUpload);
+
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'jade');
 
 var server = app.listen(process.env.PORT || 3000, function () {
-
   var host = server.address().address;
   var port = server.address().port;
-
   console.log('Example app listening at http://%s:%s', host, port);
+});
 
+
+var end_response = false;
+var multer  = require('multer');
+app.use(multer({
+  dest: './public/uploads/',
+  onFileUploadComplete: function (file, req, res) {
+    end_response = res;
+  },
+  onParseEnd: function(req) {
+    uploads(req);
+    end_response.render('uploaded_image');
+  },
+  putSingleFilesInArray: true
+}));
+
+app.post('/uploads', function(req, res) {
+
+});
+
+app.get('/result', function(req, res) {
+  res.render('uploaded_image');
 });

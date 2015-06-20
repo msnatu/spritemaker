@@ -1,5 +1,10 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  h4 Upload your SVG files here...
+
+  form(method="POST", action="uploads", enctype="multipart/form-data")
+    input(type="file", id="uploaded_files", name="uploaded_files", multiple)
+    br
+    br
+    input(type="submit", value="Upload")
