@@ -1,10 +1,4 @@
-var express = require('express');
-var app = express();
-var bodyParser = require('body-parser');
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-
-function handleFileUpload(request) {
+function handleFileUpload(request, response) {
     var uploaded_files = request.files.uploaded_files;
     var SVGSpriter = require('svg-sprite');
     var mkdirp = require('mkdirp');
@@ -17,7 +11,8 @@ function handleFileUpload(request) {
             css: {
                 render: {
                     css: true
-                }
+                },
+                prefix: ''
             }
         }
     });
@@ -38,7 +33,19 @@ function handleFileUpload(request) {
             mkdirp.sync(path.dirname(result.css[type].path));
             fs.writeFileSync(result.css[type].path, result.css[type].contents);
         }
+        var output = data.css.sprite;
+        var css_file_path = __dirname + '/public/converted/css/sprite.css';
+        var css_output = fs.readFileSync(css_file_path);
+        css_output = css_output.toString().replace(/public--uploads--/g, "");
+        css_output = css_output.replace(/svg\//g, "");
+
+        response.render('uploaded_image', {
+          converted_image: output,
+          css_output: css_output
+        });
     });
+
+
 }
 
 module.exports = handleFileUpload;

@@ -1,6 +1,6 @@
 extends layout
 
 block content
-  h2 Right click to save this image...
+  <object type="image/svg+xml" data="/converted/css/#{converted_image}">Your browser does not support SVG</object>
   <br>
-  <img src="{converted_image}"/>
+  textarea(class="css-output") #{css_output}

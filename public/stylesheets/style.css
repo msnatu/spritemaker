@@ -6,3 +6,16 @@ body {
 a {
   color: #00B7FF;
 }
+
+.css-output {
+  width:80%;
+  height:500px;
+  border: 1px solid #ccc;
+  resize:none;
+  margin: 100px auto;
+  display:block;
+  padding: 10px;
+  border-radius: 10px;
+  font-family: Lucida Grande, sans-serif;
+  font-size: 14px;
+}

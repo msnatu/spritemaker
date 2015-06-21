@@ -13,7 +13,6 @@ app.use(cookieParser());
 
 var routes = require('./routes/index');
 app.use('/', routes);
-//app.use('/uploads', routes, handleFileUpload);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -30,12 +29,14 @@ var end_response = false;
 var multer  = require('multer');
 app.use(multer({
   dest: './public/uploads/',
+  rename: function(field, filename) {
+    return filename;
+  },
   onFileUploadComplete: function (file, req, res) {
     end_response = res;
   },
   onParseEnd: function(req) {
-    uploads(req);
-    end_response.render('uploaded_image');
+    uploads(req, end_response);
   },
   putSingleFilesInArray: true
 }));
@@ -44,6 +45,5 @@ app.post('/uploads', function(req, res) {
 
 });
 
-app.get('/result', function(req, res) {
-  res.render('uploaded_image');
-});
+
+module.exports = app;
