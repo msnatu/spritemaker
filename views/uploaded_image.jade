@@ -1,6 +1,16 @@
 extends layout
 
 block content
-  <object type="image/svg+xml" data="/converted/css/#{converted_image}">Your browser does not support SVG</object>
+  .preview-header Preview
+
+  .converted-image-container
+    <object type="image/svg+xml" data="/converted/css/#{converted_image}">Your browser does not support SVG</object>
   <br>
+
+  form(method="POST", action="download")
+    input(type="hidden", value="#{converted_image}", name="generated_file_name")
+    input(type="submit", value="Download", class="download-btn")
+    <a href="/" class="redirect-home-btn">Create New</a>
+
+  .css-header CSS:
   textarea(class="css-output") #{css_output}

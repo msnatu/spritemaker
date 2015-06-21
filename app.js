@@ -45,5 +45,11 @@ app.post('/uploads', function(req, res) {
 
 });
 
+app.post('/download', function(req, res) {
+  var filename = req.body.generated_file_name;
+  var filepath = __dirname + '/public/converted/css/' + filename;
+  res.download(filepath, path.basename(filename));
+});
+
 
 module.exports = app;

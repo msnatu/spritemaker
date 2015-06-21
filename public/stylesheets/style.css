@@ -8,14 +8,87 @@ a {
 }
 
 .css-output {
-  width:80%;
+  width:50%;
   height:500px;
   border: 1px solid #ccc;
   resize:none;
-  margin: 100px auto;
   display:block;
   padding: 10px;
   border-radius: 10px;
   font-family: Lucida Grande, sans-serif;
   font-size: 14px;
+  background: #262626;
+  color: #fff;
 }
+
+.download-btn {
+  padding: 10px;
+  background: #006cb4;
+  color: #fff;
+  margin: 20px 0;
+  font-size: 18px;
+  font-family: Lucida Grande, sans-serif;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  box-shadow: 2px 2px #ccc;
+  margin-right: 10px;
+}
+
+.download-btn:hover, .redirect-home-btn:hover {
+  background: #006e00;
+}
+
+.redirect-home-btn {
+  display: inline-block;
+  padding: 11px 10px;
+  background: #fc0;
+  color: #fff;
+  border-radius: 10px;
+  text-decoration: none;
+  font-family: Lucida Grande, sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 18px;
+  box-shadow: 2px 2px #ccc;
+}
+
+.converted-image-container {
+  border-top: 3px dotted #ccc;
+  border-bottom: 3px dotted #ccc;
+  padding: 10px;
+}
+
+.preview-header {
+  margin: 50px 0 10px;
+  font-size: 16px;
+  font-family: Helvetica;
+}
+
+.css-header {
+  font-size: 16px;
+  font-family: Helvetica;
+  margin: 50px 0 10px;
+}
+
+.upload-btn {
+  padding: 8px;
+  background: rgb(223, 117, 20);
+  color: #fff;
+  margin: 20px 0;
+  font-size: 18px;
+  font-family: Lucida Grande, sans-serif;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+  border: 2px solid rgb(223, 117, 20);
+}
+
+.upload-btn:hover {
+  background: #f06e00;
+  border: 2px solid #000;
+  box-shadow: 2px 2px #ccc;
+}
+

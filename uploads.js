@@ -12,7 +12,12 @@ function handleFileUpload(request, response) {
                 render: {
                     css: true
                 },
-                prefix: ''
+                prefix: '.'
+            }
+        },
+        shape: {
+            spacing : {
+                padding: 5
             }
         }
     });
