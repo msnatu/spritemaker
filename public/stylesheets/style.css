@@ -8,12 +8,12 @@ a {
 }
 
 .css-output {
-  width:50%;
-  height:500px;
+  width:60%;
+  height:800px;
   border: 1px solid #ccc;
   resize:none;
   display:block;
-  padding: 10px;
+  padding: 20px;
   border-radius: 10px;
   font-family: Lucida Grande, sans-serif;
   font-size: 14px;
@@ -36,8 +36,8 @@ a {
   margin-right: 10px;
 }
 
-.download-btn:hover, .redirect-home-btn:hover {
-  background: #006e00;
+.download-btn:hover {
+  background: #006ce4;
 }
 
 .redirect-home-btn {
@@ -54,6 +54,10 @@ a {
   box-shadow: 2px 2px #ccc;
 }
 
+.redirect-home-btn:hover {
+  background: #fd0;
+}
+
 .converted-image-container {
   border-top: 3px dotted #ccc;
   border-bottom: 3px dotted #ccc;
@@ -64,10 +68,12 @@ a {
   margin: 50px 0 10px;
   font-size: 16px;
   font-family: Helvetica;
+  font-weight: bold;
 }
 
 .css-header {
   font-size: 16px;
+  font-weight: bold;
   font-family: Helvetica;
   margin: 50px 0 10px;
 }
