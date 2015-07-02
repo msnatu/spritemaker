@@ -1,10 +1,11 @@
 extends layout
 
 block content
+  h3 Please <a href="http://www.compressor.io" target="_blank" style="text-decoration:none;">compress</a> your svg files before uploading!
   h4 Upload your SVG files here...
 
   form(method="POST", action="uploads", enctype="multipart/form-data")
-    input(type="file", id="uploaded_files", name="uploaded_files", multiple)
+    input(type="file", id="uploaded_files", name="uploaded_files", accept=".svg", multiple)
     br
     br
-    input(type="submit", value="Upload", class="upload-btn")
+    input(type="submit", value="Boom", class="upload-btn")
